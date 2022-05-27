@@ -7,5 +7,5 @@ const injectScript = (filePath: string, tag: string) => {
 };
 
 export const monkeyPatchFetch = () => {
-  injectScript(chrome.extension.getURL('monkey-patch-fetch.js'), 'body');
+  injectScript(chrome.runtime.getURL('monkey-patch-fetch.js'), 'body');
 };
