@@ -1,0 +1,25 @@
+{
+  "manifest_version": 2,
+
+  "name": "Chaos Search Speed up",
+  "description": "This extension will help in speeding up Chaos Search",
+  "version": "1.0",
+
+  "icons": {
+    "16": "icon.png",
+    "64": "icon.png",
+    "128": "icon.png"
+  },
+  "browser_action": {
+    "default_icon": "icon.png",
+    "default_popup": "popup.html"
+  },
+  "permissions": ["activeTab", "storage", "tabs"],
+  "web_accessible_resources": ["monkey-patch-fetch.js"],
+  "content_scripts": [
+    {
+      "matches": ["https://klarna-eu.chaossearch.io/*"],
+      "js": ["chaossearch.js"]
+    }
+  ]
+}
